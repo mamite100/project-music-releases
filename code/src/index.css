@@ -12,16 +12,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.header h1 {
+  font-family: Helvetica, sans-serif;
+  font-size: 19px;
+  color: #fff;
+}
+.header {
+  border-bottom: 2px solid rgba(53, 51, 51, 0.404);
+}
 .album-name {
   font-family: Helvetica, sans-serif;
   font-size: 14px;
   color: #fff;
 }
-.artists-name {
+.artist-names a {
+  text-decoration: none;
   font-family: Helvetica, sans-serif;
   font-size: 14px;
   color: #a0a0a0;
+  display: flex;
+  flex-direction: row;
+}
+.artists-name {
+  flex-direction: row;
 }
 .list {
   color: #fff;
+}
+.article-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 2px solid black;
+}
+.album-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

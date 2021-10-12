@@ -1,6 +1,7 @@
 import React from "react";
 import data from "./data.json";
 import Album from "./components/Album";
+import Artist from "./components/Artist";
 console.log(data);
 
 console.log(
@@ -48,25 +49,33 @@ console.log(items);
 
 // const artister = data.albums.items.artists[0];
 // console.log(artister);
+
+//Live Share Project!!
 export const App = () => {
   return (
     <div>
-      <header></header>
-      <div>
+      <header className="header">
+        <h1>New albums & singels</h1>
+      </header>
+      <div className="album-wrapper">
         {items.map((item) => {
           return (
-            <Album
-              key={item.id}
-              img={item.images[1].url}
-              title={item.name}
-              artist={item.artists.map((artistNames) => {
-                return artistNames.name;
+            <>
+              <Album
+                key={item.id}
+                img={item.images[1].url}
+                title={item.name}
+                albumLink={item.external_urls.spotify}
+              />
+              {item.artists.map((artistNames) => {
+                return (
+                  <Artist
+                    artistName={artistNames.name}
+                    artistLink={artistNames.external_urls.spotify}
+                  />
+                );
               })}
-              artistLink1={item.artists[0].external_urls.spotify}
-              //artistLink2={item.artists[1].external_urls.spotify}
-              // artistLink3={item.artists[2].external_urls.spotify}
-              albumLink={item.external_urls.spotify}
-            />
+            </>
           );
         })}
       </div>
