@@ -1,14 +1,24 @@
 import React from "react";
 import { Artist } from "./Artist";
 
-const Album = (props) => {
+const Album = ({
+  img,
+  title,
+  artist,
+  artistLink1,
+  artistLink2,
+  artistLink3,
+  albumLink,
+}) => {
   return (
     <article className="article-box">
-      <img src={props.img} alt="" />
-      <p className="album-name">{props.title}</p>
-      <p className="artists-name">{props.artist}</p>
-      <p className="list">{props.list}</p>
-      <p className="images">{props.images}</p>
+      <a href={albumLink}>
+        <img src={img} alt={artist} />
+      </a>
+      <p className="album-name">{title}</p>
+      <a href={artistLink1}>
+        <p className="artists-name">{artist}</p>
+      </a>
     </article>
   );
 };
